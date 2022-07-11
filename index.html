@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CRUD API RES AJAX</title>
+</head>
+<body>
+	<h1>CRUD API RES AJAX</h1>
+	<section class="crud">
+		<article>
+			<h2 class="crud-title">Agregar Santo</h2>
+			<fomr class="crud-form">
+				<input type="text" name="nombre" placeholder="nombre" required>
+				<br>
+				<input type="text" name="constelacion" placeholder="constelacion" required>
+				<br>
+				<input type="submit" value="Enviar">
+				<input type="hidden" name="action">
+			</fomr>
+		</article>
+		<article>
+			<h2>Ver Santos</h2>
+			<table class="crud-table">
+				<thead>
+					<tr>
+						<td>Nombre</td>
+						<td>Constelación</td>
+						<td>Acciones</td>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</article>
+	</section>
+	<template id="crud-template">
+		<tr>
+			<td class="name"></td>
+			<td class="constellation"></td>
+			<td >
+				<button class="edit">Editar</button>
+				<button class="delete">Eliminar</button>
+			</td>
+		</tr>
+	</template>
+	<script src="script.js"></script>
+</body>
+</html>
