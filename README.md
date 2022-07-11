@@ -8,7 +8,7 @@
 
 ## Comandos
 
-Json server `json-server -w -p 5555 db.jso`
+Json server `json-server -w -p 5555 db.json`
 
 ## Video
 
