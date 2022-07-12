@@ -1,0 +1,78 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/* outline: 1px solid red; */
+}
+body {
+	background-color: rgb(226, 226, 226);
+}
+
+h1 {
+	margin: 3rem 0 1rem;
+	text-align: center;
+}
+
+.crud {
+	display: grid;
+	gap: 1rem;
+	padding: 1rem;
+	grid-template-columns: 30% auto auto;
+	align-items: start;
+}
+.crud article {
+	font-family: monospace;
+	background: #dedede;
+    width: 100%;
+	min-width: 300px;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+	box-shadow: -10px -10px 30px #7a7a7a inset;
+}
+.crud article:first-child form {
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+.crud article:first-child input, button {
+	padding: .5rem;
+	margin: .5rem 0;
+	border: none;
+	border-radius: 4px;
+}
+.crud article:first-child input[type=text]{
+	width: 100%;
+}
+.crud article:last-child {
+	grid-column: 2 / 4;
+}
+.crud-table {
+	width: 100%;
+	margin: 1rem 0;
+}
+.crud-table tr td:last-child {
+	width: 150px;
+}
+.crud-table button {
+	margin: .2rem;
+}
+.crud-table thead tr td {
+	padding: .3rem 0;
+}
+.crud-table tbody tr td:not(:last-child){
+	background-color: #fff;
+	padding: 0 .5rem;
+}
+
+input[type=submit]:hover, button:hover{
+	cursor: pointer;
+	background-color: rgb(0, 94, 0);
+	color: #fff;
+}
+input[type=submit].cancel {
+	display: none;
+}
+.delete:hover, input[type=submit].cancel:hover{
+	background-color: rgb(153, 4, 4);
+}

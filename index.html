@@ -4,21 +4,23 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>CRUD API RES AJAX</title>
+	<title>CRUD API REST</title>
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<h1>CRUD API RES AJAX</h1>
+	<h1>CRUD API REST</h1>
 	<section class="crud">
 		<article>
 			<h2 class="crud-title">Agregar Santo</h2>
 			<form class="crud-form">
-				<input type="text" name="nombre" placeholder="nombre" required>
-				<br>
-				<input type="text" name="constelacion" placeholder="constelacion" required>
-				<br>
-				<input type="submit" value="Enviar">
+				<input type="text" name="nombre" placeholder="Nombre" required>
+				<input type="text" name="constelacion" placeholder="Constelacion" required>
 				<input type="hidden" name="id">
+				<div>
+					<input type="submit" value="Enviar">
+					<input type="submit" value="Cancelar" class="cancel" >
+				</div>
 			</form>
 		</article>
 		<article>
@@ -26,9 +28,9 @@
 			<table class="crud-table">
 				<thead>
 					<tr>
-						<td>Nombre</td>
-						<td>Constelación</td>
-						<td>Acciones</td>
+						<td><b>Nombre</b></td>
+						<td><b>Constelación</b></td>
+						<td><b>Acciones</b></td>
 					</tr>
 				</thead>
 				<tbody></tbody>

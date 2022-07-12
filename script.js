@@ -4,16 +4,20 @@ import { getAllWithAxios , createWithAxios, editWithAxios, deleteWithAxios } fro
 
 const d = document,
 	$form = d.querySelector('.crud-form'),
-	$title = d.querySelector('.crud-title');
+	$title = d.querySelector('.crud-title'),
+	$radioAjax = d.querySelector('#radioAjax'),
+	$radioFetch = d.querySelector('#radioFetch'),
+	$radioAxios = d.querySelector('#radioAxios'),
+	$cancel = d.querySelector('.cancel');
 
 // GET ALL WITH AJAX
-//d.addEventListener("DOMContentLoaded", getAllWithAjax)
+d.addEventListener("DOMContentLoaded", getAllWithAjax)
 
 // GET ALL WHIT FETCH
 //d.addEventListener("DOMContentLoaded", getAllWithFetch)
 
 // GET ALL WHIT FETCH
-d.addEventListener("DOMContentLoaded", getAllWithAxios)
+//d.addEventListener("DOMContentLoaded", getAllWithAxios)
 
 d.addEventListener("submit", e => {
 	if(e.target === $form){
@@ -23,24 +27,24 @@ d.addEventListener("submit", e => {
 			// CREATE - POST
 			
 			// CREATE WITH AJAX
-			// createWithAjax({ nombre: e.target.nombre.value, constelacion: e.target.constelacion.value })
+			createWithAjax({ nombre: e.target.nombre.value, constelacion: e.target.constelacion.value })
 
 			// CREATE WITH FETCH
 			// createWithFetch({ nombre: e.target.nombre.value, constelacion: e.target.constelacion.value })
 			
 			// CREATE WITH AXIOS
-			createWithAxios({ nombre: e.target.nombre.value, constelacion: e.target.constelacion.value })
+			// createWithAxios({ nombre: e.target.nombre.value, constelacion: e.target.constelacion.value })
 		}else{
 			// UPDATE - PUT
 			
 			// EDIT WITH AJAX
-			// editWithAjax({ id: e.target.id.value, nombre: e.target.nombre.value, constelacion: e.target.constelacion.value })
+			editWithAjax({ id: e.target.id.value, nombre: e.target.nombre.value, constelacion: e.target.constelacion.value })
 
 			// EDIT WITH FETCH
 			// editWithFetch({ id: e.target.id.value, nombre: e.target.nombre.value, constelacion: e.target.constelacion.value })
 			
 			// EDIT WITH AXIOS
-			editWithAxios({ id: e.target.id.value, nombre: e.target.nombre.value, constelacion: e.target.constelacion.value })
+			// editWithAxios({ id: e.target.id.value, nombre: e.target.nombre.value, constelacion: e.target.constelacion.value })
 		}
 	}
 })
@@ -48,9 +52,20 @@ d.addEventListener("submit", e => {
 d.addEventListener("click", e => {
 	if(e.target.matches(".edit")){
 		$title.textContent = "Editar Santo"
+		$cancel.style.display = "initial"
 		$form.nombre.value = e.target.dataset.name
 		$form.constelacion.value = e.target.dataset.constellation
 		$form.id.value = e.target.dataset.id
+	}
+})
+
+d.addEventListener("click", e => {
+	if(e.target.matches(".cancel")){
+		$title.textContent = "Agregar Santo"
+		$cancel.style.display = "none"
+		$form.nombre.value = ""
+		$form.constelacion.value = ""
+		$form.id.value = ""
 	}
 })
 
@@ -60,13 +75,13 @@ d.addEventListener("click", e => {
 
 		if(isDelete){
 			// DELETE WITH AJAX
-			//deleteWithAjax( e.target.dataset.id )
+			deleteWithAjax( e.target.dataset.id )
 			
 			// DELETE WITH FETCH
 			// deleteWithFetch( e.target.dataset.id )
 			
 			// DELETE WITH AXIOS
-			deleteWithAxios( e.target.dataset.id )
+			// deleteWithAxios( e.target.dataset.id )
 		}
 	}
 })

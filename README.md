@@ -12,5 +12,5 @@ Json server `json-server -w -p 5555 db.json`
 
 ## Video
 
-Explicacion del Ejercicio [aqui]()
+Explicacion del Ejercicio [aqui](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
