@@ -1,6 +1,6 @@
 import { getAllWithAjax, createWithAjax, editWithAjax, deleteWithAjax } from "./controllers/ajax.controller.js";
-
 import { getAllWithFetch , createWithFetch, editWithFetch, deleteWithFetch } from "./controllers/fetch.controller.js";
+import { getAllWithAxios , createWithAxios, editWithAxios, deleteWithAxios } from "./controllers/axios.controller.js";
 
 const d = document,
 	$form = d.querySelector('.crud-form'),
@@ -10,7 +10,10 @@ const d = document,
 //d.addEventListener("DOMContentLoaded", getAllWithAjax)
 
 // GET ALL WHIT FETCH
-d.addEventListener("DOMContentLoaded", getAllWithFetch)
+//d.addEventListener("DOMContentLoaded", getAllWithFetch)
+
+// GET ALL WHIT FETCH
+d.addEventListener("DOMContentLoaded", getAllWithAxios)
 
 d.addEventListener("submit", e => {
 	if(e.target === $form){
@@ -23,7 +26,10 @@ d.addEventListener("submit", e => {
 			// createWithAjax({ nombre: e.target.nombre.value, constelacion: e.target.constelacion.value })
 
 			// CREATE WITH FETCH
-			createWithFetch({ nombre: e.target.nombre.value, constelacion: e.target.constelacion.value })
+			// createWithFetch({ nombre: e.target.nombre.value, constelacion: e.target.constelacion.value })
+			
+			// CREATE WITH AXIOS
+			createWithAxios({ nombre: e.target.nombre.value, constelacion: e.target.constelacion.value })
 		}else{
 			// UPDATE - PUT
 			
@@ -31,7 +37,10 @@ d.addEventListener("submit", e => {
 			// editWithAjax({ id: e.target.id.value, nombre: e.target.nombre.value, constelacion: e.target.constelacion.value })
 
 			// EDIT WITH FETCH
-			editWithFetch({ id: e.target.id.value, nombre: e.target.nombre.value, constelacion: e.target.constelacion.value })
+			// editWithFetch({ id: e.target.id.value, nombre: e.target.nombre.value, constelacion: e.target.constelacion.value })
+			
+			// EDIT WITH AXIOS
+			editWithAxios({ id: e.target.id.value, nombre: e.target.nombre.value, constelacion: e.target.constelacion.value })
 		}
 	}
 })
@@ -54,7 +63,10 @@ d.addEventListener("click", e => {
 			//deleteWithAjax( e.target.dataset.id )
 			
 			// DELETE WITH FETCH
-			deleteWithFetch( e.target.dataset.id )
+			// deleteWithFetch( e.target.dataset.id )
+			
+			// DELETE WITH AXIOS
+			deleteWithAxios( e.target.dataset.id )
 		}
 	}
 })

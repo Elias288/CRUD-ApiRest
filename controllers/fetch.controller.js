@@ -52,6 +52,7 @@ const createWithFetch = async(data) => {
 		$form.insertAdjacentHTML('afterend', `<p><b>${err.status}: ${message}</b></p>`)
 	}
 }
+
 const editWithFetch = async(data) => {
 	const {id, ...nameAndConstellation} = data
 
@@ -73,6 +74,7 @@ const editWithFetch = async(data) => {
 		$table.insertAdjacentHTML('afterend', `<p><b>${err.status}: ${message}</b></p>`)
 	}
 }
+
 const deleteWithFetch = async(data) => {
 	try {
 		let options = {

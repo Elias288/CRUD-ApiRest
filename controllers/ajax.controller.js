@@ -61,9 +61,4 @@ const deleteWithAjax = (data) => {
 	})
 }
 
-export { 
-	getAllWithAjax,
-	createWithAjax, 
-	editWithAjax,
-	deleteWithAjax 
-}
+export { getAllWithAjax, createWithAjax, editWithAjax, deleteWithAjax }
