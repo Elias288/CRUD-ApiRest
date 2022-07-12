@@ -1,33 +1,37 @@
-import {
-	getAllWhitAjax,
-	createWhitAjax,
-	editWhitAjax,
-	deleteWhitAjax
-} from "./controllers/ajax.controller.js";
+import { getAllWithAjax, createWithAjax, editWithAjax, deleteWithAjax } from "./controllers/ajax.controller.js";
+
+import { getAllWithFetch , createWithFetch, editWithFetch, deleteWithFetch } from "./controllers/fetch.controller.js";
 
 const d = document,
 	$form = d.querySelector('.crud-form'),
 	$title = d.querySelector('.crud-title');
 
-d.addEventListener("DOMContentLoaded", getAllWhitAjax)
+// GET ALL WITH AJAX
+//d.addEventListener("DOMContentLoaded", getAllWithAjax)
+
+// GET ALL WHIT FETCH
+d.addEventListener("DOMContentLoaded", getAllWithFetch)
 
 d.addEventListener("submit", e => {
 	if(e.target === $form){
 		e.preventDefault()
 
 		if(!e.target.id.value){
-			//CREATE - POST
-			createWhitAjax({
-				nombre: e.target.nombre.value,
-				constelacion: e.target.constelacion.value
-			})
+			// CREATE - POST
+			
+			// CREATE WITH AJAX
+			// createWithAjax({ nombre: e.target.nombre.value, constelacion: e.target.constelacion.value })
+
+			// CREATE WITH FETCH
+			createWithFetch({ nombre: e.target.nombre.value, constelacion: e.target.constelacion.value })
 		}else{
-			//UPDATE - PUT
-			editWhitAjax({
-				id: e.target.id.value,
-				nombre: e.target.nombre.value,
-				constelacion: e.target.constelacion.value
-			})
+			// UPDATE - PUT
+			
+			// EDIT WITH AJAX
+			// editWithAjax({ id: e.target.id.value, nombre: e.target.nombre.value, constelacion: e.target.constelacion.value })
+
+			// EDIT WITH FETCH
+			editWithFetch({ id: e.target.id.value, nombre: e.target.nombre.value, constelacion: e.target.constelacion.value })
 		}
 	}
 })
@@ -43,11 +47,14 @@ d.addEventListener("click", e => {
 
 d.addEventListener("click", e => {
 	if(e.target.matches(".delete")){
-
 		let isDelete = confirm(`¿Estás seguro de eliminar el id ${e.target.dataset.id}?`)
 
 		if(isDelete){
-			deleteWhitAjax( e.target.dataset.id )
+			// DELETE WITH AJAX
+			//deleteWithAjax( e.target.dataset.id )
+			
+			// DELETE WITH FETCH
+			deleteWithFetch( e.target.dataset.id )
 		}
 	}
 })

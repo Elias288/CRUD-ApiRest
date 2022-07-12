@@ -1,11 +1,11 @@
-import ajax from "../components/ajax.CRUD.js"
+import ajax from "../components/ajax.js"
 
 const d = document,
 	$table = d.querySelector('.crud-table'),
 	$template = d.getElementById('crud-template').content,
 	$fragment = d.createDocumentFragment();
 
-const getAllWhitAjax = () => {
+const getAllWithAjax = () => {
 	ajax({
 		url: "http://localhost:5555/santos",
 		success: (res) => {
@@ -31,7 +31,7 @@ const getAllWhitAjax = () => {
 	})
 }
 
-const createWhitAjax = (data) => {
+const createWithAjax = (data) => {
 	ajax({
 		url: "http://localhost:5555/santos",
 		method: "POST",
@@ -41,7 +41,7 @@ const createWhitAjax = (data) => {
 	})
 }
 
-const editWhitAjax = (data) => {
+const editWithAjax = (data) => {
 	const {id, ...nameAndConstellation} = data
 	ajax({
 		url: `http://localhost:5555/santos/${id}`,
@@ -52,7 +52,7 @@ const editWhitAjax = (data) => {
 	})
 }
 
-const deleteWhitAjax = (data) => {
+const deleteWithAjax = (data) => {
 	ajax({
 		url: `http://localhost:5555/santos/${data}`,
 		method: "DELETE",
@@ -62,8 +62,8 @@ const deleteWhitAjax = (data) => {
 }
 
 export { 
-	getAllWhitAjax,
-	createWhitAjax,
-	editWhitAjax,
-	deleteWhitAjax
+	getAllWithAjax,
+	createWithAjax, 
+	editWithAjax,
+	deleteWithAjax 
 }
